@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="CPCL2SVG.js"></script>
+		<script type="text/javascript" src="pdf417-min.js"></script>
+	</head>
+	<body>
+		<h1>CPCL 2 SVG</h1>
+		<div id="svgContainer"></div>
+		<script>
+			var data1 = `! U1 LABEL
+! U1 TONE 50
+! U1 SPEED 3
+! U1 PAGE-WIDTH 780
+! U1 LMARGIN 30
+! U1 SETLP 0 6 40
+      Weekly Report
+ 
+! U1 SETLP 0 3 40
+            20/11/2017 - 27/11/2017
+! U1 SETLP 7 0 12
+Date           |Code      |Product   |QTY  |Unit     |Total  
+! U1 RY -6
+---------------+----------+----------+-----+---------+-------
+! U1 RY -4
+11/27/2017     |00/0000   |ABC       |    2|     0.00|   0.00
+11/27/2017     |00/0000   |ABC123    |    3|    12.00|  36.00
+               |          |          |     |         |       
+               |          |          |     |         |       
+               |          |          |     |Nett:    |  36.00
+               |          |          |     |VAT:     |   7.20
+               |          |          |     |Total:   |  43.20
+ 
+! U1 RY 30
+! U1 SETLP 0 2 15
+Date Printed: 27/10/2016, 12:30:24! U1 SETLP 0 1 15
+Date Printed: 27/10/2016, 12:30:24
+! U1 RY 30`
+			var data2 = `! 0 200 200 700 1
+JOURNAL
+CONTRAST 0
+TONE 0
+SPEED 3
+PAGE-WIDTH 780
+BAR-SENSE
+;// PAGE 0000000007800700
+T 7 0 13 37 Account Name Here
+T 0 3 9 147 Ticket No.: C011899988199
+LINE 12 639 784 639 2
+B PDF-417 158 183 XD 3 YD 6 C 6 S 1
+BINARY-DATA-HERE
+ENDPDF
+T 0 5 11 100 Ticket Note
+T 0 0 307 618 Powered by CPCL-JS
+;//{{BEGIN-BT
+T 0 2 16 363 Producer:
+T 0 2 16 390 Driver:
+T 0 2 16 417 Haulier:
+T 0 2 16 444 Vehicle Type:
+T 0 2 16 471 Material:
+T 0 2 16 498 Est Weight:
+;//{{END-BT
+;//{{BEGIN-BT
+T 0 2 175 363 Customer
+T 0 2 175 390 Test
+T 0 2 175 417 Test
+T 0 2 175 444 Test
+T 0 2 175 471 Test
+T 0 2 175 498 Test
+;//{{END-BT
+T 0 3 14 332 Origin: LONDON
+;//{{BEGIN-BT
+T 0 3 14 530 Destination: Test Location
+T 0 3 14 557 Vehicle: TESTVEHICLE
+T 0 3 14 584 Time: dd/mm/yyyy hh:mm
+;//{{END-BT
+LINE 12 320 784 320 2
+PRINT`;
+
+var data3 = `
+! U1 LABEL
+! U1 TONE 50
+! U1 SPEED 3
+! U1 PAGE-WIDTH 780
+! U1 LMARGIN 30
+! U1 SETLP 4 0 85
+           Account Name Here
+! U1 UNDERLINE ON
+                INVOICE
+! U1 UNDERLINE OFF
+! U1 RY -10
+! U1 SETLP 0 3 15
+DATE TIME.... 24/11/2017, 13:48:53
+NAME.........   CUSTOMER NAME
+ADDRESS...... TEST ADDRESS
+             123
+             Test Street
+             Test City
+             
+
+NO  CODE    COST      VAT     PRODUCT
+! U1 RY -7
+--  ------  --------  ------  -----------------
+! U1 RY -7
+01  6283       17.50    3.50  PROCUCT 1
+02  73847      12.50    2.50  PROCUCT 1
+03  04738      12.50    2.50  PROCUCT 3              
+04  07623      11.50    2.30  PROCUCT 2         
+05  07467      12.50    2.50  PROCUCT 3
+06  0843       11.50    2.30                   
+07  06373      20.50    4.10  TEST PROCUCT 4
+
+
+SELLER       JOHN ADAMS
+
+TOTAL COST           98.50
+SUB-TOTAL            98.50
+VAT AMOUNT           19.70
+TOTAL               115.80
+
+! U1 SETLP 7 0 50
+
+`;
+
+			document.getElementById("svgContainer").appendChild(CPCL2SVG.render(data2));
+		</script>
+	</body>
+</html>
