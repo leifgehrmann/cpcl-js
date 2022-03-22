@@ -421,8 +421,8 @@ CPCL2SVG = {
 			var parameters = params.split(" ");
 
 			var x0 = parameters[0];
-			var y1 = parameters[1];
-			var x0 = parameters[2];
+			var y0 = parameters[1];
+			var x1 = parameters[2];
 			var y1 = parameters[3];
 			var width = parameters[4];
 
